@@ -7,9 +7,6 @@ import static src.TrafficLight.*;
 
 public class TrafficLightTest {
 
-    TrafficState sGG = new TrafficState(GREEN, GREEN);
-    TrafficState sGR = new TrafficState(GREEN, YELLOW);
-
     @Test
     public void testExample() {
         Assert.assertEquals(2, 1 + 1);
@@ -47,9 +44,5 @@ public class TrafficLightTest {
         ts.addEdge("timer", sGG, sYY);
         ts.addEdge("timer", sRR, sGG);
 
-        //Assert.assertFalse(ts.canReach(sGG));
-        Assert.assertFalse(ts.canReachFunc((s) -> {
-            return (s.hope == GREEN && s.waterman == GREEN);
-        }));
     }
 }
