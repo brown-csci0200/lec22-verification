@@ -1,12 +1,21 @@
 package src;
 
+import java.util.HashMap;
+
 public class TrafficState {
     TrafficLight hope;
     TrafficLight waterman;
 
+    HashMap<String, TrafficState> nextStates;
+
     public TrafficState(TrafficLight h, TrafficLight w) {
         this.hope = h;
         this.waterman = w;
+        this.nextStates = new HashMap<>();
+    }
+
+    public void addEdge(String event, TrafficState target) {
+        this.nextStates.put(event, target);
     }
 
     @Override
